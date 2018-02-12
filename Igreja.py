@@ -1,9 +1,8 @@
 import re
-lista = {'Lixa de Ferro': '3001'}
 
 while True:
     print('Digite [1] Para Cadastrar Novos Produtos')
-    print('Digite [2] Para Consultar')
+    print('Digite [2] Para Visualizar')
     print('Digite [3] Para Sair')
     entrada = input()
     if entrada == '1':
@@ -11,16 +10,20 @@ while True:
         nome = input()
         print('Digite o Código do Produto')
         prodCode = input()
-        lista[nome] = prodCode
+        items = open('produtos.txt', 'a')
+        items.write(nome + ' - ' + prodCode + '\n')
+        items.close()
     elif entrada == '2':
         print('Digite o Item')
         item = input()
-        for chave, valor in lista.items():
-            print(chave, ' - ', valor)
-            proc = re.search(item, chave)
-            if proc.group(0) != None:
-                print(proc.group(0))
-            else:
-                print('Objeto Não Encontrado')
+        itemsCon = open('produtos.txt', 'r')
+        itemsConteudo = itemsCon.read()
+        itemsList = itemsConteudo.split('\n')
+        for i in itemsList:
+            findItem = re.search(item, i)
+            if findItem != None:
+                print(i)
+
+        itemsCon.close()
     elif entrada == '3':
         break
