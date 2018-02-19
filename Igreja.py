@@ -23,29 +23,33 @@ while True:
     print('Digite [5] Para Fazer Backup')
     print('')
     entrada = input('Digite: ')
+    if entrada == '':
+        os.system('cls')
 
 
     #SE A ENTRADA == 1
     if entrada == '1':
         print('')
-        print('Digite o Nome do Produto')
+        print('Digite o Nome do Produto [Ex: Luvas]')
         nome = input('Nome Produto: ')
         print('')
-        print('Digite o Código do Produto')
+        print('Digite o Código do Produto [Ex: 3014]')
         prodCode = input('Código Produto: ')
         if nome == '':
             continue
         items = open('produtos.txt', 'a')
         items.write(nome.upper() + ' - ' + prodCode + '\n')
         items.close()
-        print('Cadastrado com Sucesso!')
+        print('')
+        print('CADASTRADO COM SUCESSO!')
         limparTela()
 
 
     #SE A ENTRADA == 2
     elif entrada == '2':
-        print('Digite o Nome do Item ou Código')
+        print('Digite o Nome [Ex: Luvas] ou Código [Ex: 3014]')
         item = input('Nome do Produto: ')
+        print('')
         cont = 0
         itemsList = visualizarProd()
         itemsList.sort()
@@ -60,22 +64,23 @@ while True:
                 print(''.ljust(10, '.') + ' ' + prod)
         print('')
         if cont == 0:
-            print('Nenhum Item Encontrado no Banco de Dados')
+            print('NENHUM ITEM ENCONTRADO NO BANCO DE DADOS')
         else:
-            print('Total de Resultados: ' + str(cont))
+            print('Total de Resultados [' + str(cont) + ']')
         limparTela()
 
 
     #SE A ENTRADA == 3
     elif entrada == '3':
         print('')
-        print('Digite o Nome ou Código do Produto')
+        print('Digite o Nome [Ex: Luvas] ou Código [Ex: 3014]')
         ndP = input('Digite: ') #Nome do Produto
         itemL = visualizarProd()
         itemL.sort()
         cont = 0
         lista = []
         lista2 = []
+
         for i in itemL:
             findItem = re.search(ndP.upper(), i)
             if findItem == None:
@@ -84,14 +89,16 @@ while True:
                 lista2.append(i)
             elif i == '':
                 continue
+        # TODO: DIGITAR O NOME DO PRODUTO PRA EXCLUIR
+
         #LOOP PARA VIZUALIZAR OS PRODUTOS
         for li in lista2:
             if li == '':
                 continue
             cont += 1
-            print('..........Número do Item ['+ str(cont) +'] ' + li)
+            print('.......... ['+ str(cont) +'] Número do Item ' + li)
         print('')
-        print('Digite o Número do Item Para Excluir')
+        print('Digite o Número do Item Para Excluir [Ex: 1]')
         exI = input('Digite: ')
         if exI == '':
             limparTela()
@@ -109,7 +116,8 @@ while True:
         for s in salvo:
             prod.write(s + '\n')
         prod.close()
-        print('Excluido Com Sucesso!')
+        print('')
+        print('DELETADO COM SUCESSO!')
         limparTela()
 
 
