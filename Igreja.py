@@ -33,8 +33,8 @@ while True:
         print('')
         print('Digite o Código do Produto')
         prodCode = input('Código Produto: ')
-        if prodCode == '':
-            prodCode = 'Sem Código'
+        if nome == '':
+            continue
         items = open('produtos.txt', 'a')
         items.write(nome.upper() + ' - ' + prodCode + '\n')
         items.close()
@@ -48,6 +48,7 @@ while True:
         item = input('Nome do Produto: ')
         cont = 0
         itemsList = visualizarProd()
+        itemsList.sort()
         for i in itemsList:
             if i == '':
                 continue
@@ -71,6 +72,7 @@ while True:
         print('Digite o Nome ou Código do Produto')
         ndP = input('Digite: ') #Nome do Produto
         itemL = visualizarProd()
+        itemL.sort()
         cont = 0
         lista = []
         lista2 = []
