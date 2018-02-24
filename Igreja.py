@@ -75,6 +75,9 @@ while True:
         print('')
         print('Digite o Nome [Ex: Luvas] ou Código [Ex: 3014]')
         ndP = input('Digite: ') #Nome do Produto
+        while ndP == '':
+            print('Digite o Nome [Ex: Luvas] ou Código [Ex: 3014]')
+            ndP = input('Digite: ')
         itemL = visualizarProd()
         itemL.sort()
         cont = 0
@@ -119,7 +122,6 @@ while True:
         print('')
         print('DELETADO COM SUCESSO!')
         limparTela()
-
 
     #SE A ENTRADA == 4
     elif entrada == '4':
