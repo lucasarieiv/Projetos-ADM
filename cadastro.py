@@ -1,13 +1,13 @@
 from tkinter import *
 
 def cadastroJanela():
+
+    # Função Quando o Botão For Clicado
     def bt_click():
         nome = nomeProduto.get()
         while nome == '':
-            msg = Label(janela1, text='Erro: Digite o Nome do Produto', foreground='red', width=30)
-            msg.place(x=70, y=260)
-            msg['bg'] = '#fff'
-            msg.configure(font=('Verdana', 12))
+            msg = Label(janela1, text='Erro: Digite o Nome do Produto', foreground='red', width=30, bg='#fff', font=('Verdana', 12))
+            msg.pack(pady=5)
             cadastroJanela.destroy()
             cadastroJanela()
         prodCode = codigoProduto.get()
@@ -16,36 +16,39 @@ def cadastroJanela():
         items.close()
         janela1.destroy()
 
+    # Cria Janela
     janela1 = Tk()
 
-    top = Label(janela1, text='Cadastro Produtos', foreground='#fff', height=2)
-    top.place(x=0, y=0)
-    top['bg'] = '#ED9C0F'
-    top.configure(font=('Arial', 22))
+    # Topo do Programa
+    top = Label(janela1, text='Cadastro Produtos', foreground='#fff', height=2, bg='#ED9C0F', font=('Arial', 30))
     top.pack(side=TOP, fill=X)
 
-    nomeTexto = Label(janela1, text='Nome Ex: Lâmpada')
-    nomeTexto['bg'] = '#fff'
-    nomeTexto.place(x=100, y=130)
-    nomeTexto.configure(font=("Courier", 33))
+    # Texto: Nome Ex: Lâmpada
+    nomeTexto = Label(janela1, text='Nome Ex: Lâmpada', bg='#fff', font=("Courier", 30))
+    nomeTexto.pack(pady=30)
 
-    nomeProduto = Entry(janela1, width=25, font=('Verdana', 20))
-    nomeProduto.place(x=100, y=200)
+    # Caixa de Input do "Nome Ex: Lâmpada"
+    nomeProduto = Entry(janela1, width=30, font=('Heveltica', 22))
+    nomeProduto.pack(pady=10)
 
-    codigoTexto = Label(janela1, text='Código Ex: 3014')
-    codigoTexto['bg'] = '#fff'
-    codigoTexto.place(x=100, y=290)
-    codigoTexto.configure(font=('Courier', 33))
+    # Texto: Código Ex: 3014
+    codigoTexto = Label(janela1, text='Código Ex: 3014', bg='#fff', font=('Courier', 33))
+    codigoTexto.pack(pady=10)
 
-    codigoProduto = Entry(janela1, width=25, font=('Verdana', 20))
-    codigoProduto.place(x=100, y=350)
+    # Caixa de Input do "Código Ex: 3014"
+    codigoProduto = Entry(janela1, width=30, font=('Heveltica', 22))
+    codigoProduto.pack(pady=30)
 
-    bt = Button(janela1, width=30, height=2, text='Cadastrar', borderwidth=0, foreground='#fff', command=bt_click)
-    bt.place(x=55, y=450)
-    bt['bg'] = '#ED9C0F'
-    bt.configure(font=('Verdana', 20))
+    # Botão Cadastrar
+    bt = Button(janela1, width=30, height=2, text='Cadastrar', borderwidth=0, foreground='#fff', bg='#ED9C0F', font=('Verdana', 20), command=bt_click)
+    bt.pack(pady=15)
+
+    # Rodapé
+    rodape = Label(janela1, text='Por Lucas Vieira Copyright \xa9 2018 - Todos os Direitos Reservados', bg='#ED9C0F', foreground='#fff', height=3, font=('Verdana', 13))
+    rodape.pack(side=BOTTOM, fill=X)
 
 
+    # Configurações da Janela
     janela1.title('Cadastro')
     janela1.geometry('630x650+200+200')
     janela1['bg'] = '#fff'

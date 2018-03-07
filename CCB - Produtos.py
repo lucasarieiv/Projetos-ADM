@@ -3,6 +3,7 @@ from tkinter import *
 from backup import *
 from cadastro import *
 from visualizar import *
+from delete import *
 
 class janela(object):
 
@@ -10,61 +11,54 @@ class janela(object):
         backup()
 
     def janelaPrincipal(self):
+
+        # Função Para Chamar a Tela de Cadastro
         def bt_cadastro():
             cadastroJanela()
 
+        # Função Para Chamar a Tela de Visualização
         def bt_visualizar():
             visualizarJanela()
 
+        def bt_delete():
+            janelaDelete()
+
         janela = Tk()
 
+        # Topo do Programa
+        top = Label(janela, text='DL - CAMARAGIBE V 2.1', foreground="#fff", height=2, bg='#787878')
+        top.configure(font=('Arial', 30, 'bold')) # 'bold'
+        top.pack(side=TOP, fill=X)
+
         # Botão Cadastrar
-        bt1 = Button(janela, width=30, height=2, text='Cadastrar', borderwidth=0, foreground='#fff', command=bt_cadastro)
-        # bt1['command'] = partial(bt_cadastro, janela)
-        bt1.place(x=55, y=140)
-        bt1['bg'] = '#22C234'
+        bt1 = Button(janela, width=30, height=2, text='Cadastrar', borderwidth=0, foreground='#fff', command=bt_cadastro, bg='#22C234')
         bt1.configure(font=('Verdana', 20))
+        bt1.pack(pady=25)
         # Fim Botão Cadastrar
 
         # Botão Vizualizar
-        bt2 = Button(janela, width=30, height=2, text='Vizualizar', borderwidth=0, foreground='#fff', command=bt_visualizar)
-        # bt2['command'] = partial(bt_click, bt2)
-        bt2.place(x=55, y=260)
-        bt2['bg'] = '#4AB5FB'
+        bt2 = Button(janela, width=30, height=2, text='Vizualizar', borderwidth=0, foreground='#fff', command=bt_visualizar, bg='#4AB5FB')
         bt2.configure(font=('Verdana', 20))
+        bt2.pack(pady=25)
 
         # Fim Botão Vizualizar
 
         # Botão Excluir
-        bt3 = Button(janela, width=30, height=2, text='Excluir', borderwidth=0, foreground='#fff')
-        bt3.place(x=55, y=380)
-        bt3['bg'] = '#EF3C28'
+        bt3 = Button(janela, width=30, height=2, text='Excluir', borderwidth=0, foreground='#fff', bg='#EF3C28', command=bt_delete)
         bt3.configure(font=('Verdana', 20))
+        bt3.pack(pady=25)
 
         # Fim Botão Excluir
 
         # Botão Backup
-        bt4 = Button(janela, width=30, height=2, text='Backup', borderwidth=0, foreground='#fff', command=self.bt_backup)
-        bt4.place(x=55, y=500)
-        bt4['bg'] = '#ED9C0F'
+        bt4 = Button(janela, width=30, height=2, text='Backup', borderwidth=0, foreground='#fff', command=self.bt_backup, bg='#ED9C0F')
         bt4.configure(font=('Verdana', 20))
-
+        bt4.pack(pady=25)
         # Fim Botão Backup
 
-        top = Label(janela, text='PROGRAMA CODIGO', foreground="#fff", height=2)
-        top.place(x=0, y=0)
-        top['bg'] = '#F23838'
-        top.configure(font=('Arial', 22)) # 'bold'
-        top.pack(side=TOP, fill=X)
-
-        # lb = Label(janela, text='Teste')
-        # lb.place(x=40, y=50)
-        # lb.configure(font=("Courier", 44))
-
         # Configurações da Janela
-        janela.title('Meu Programa')
+        janela.title('CCB - CODIGOS V 2.1')
         janela.geometry('630x650+200+200')
-        janela['bg'] = '#fff'
         janela.mainloop()
 
 
