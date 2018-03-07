@@ -3,14 +3,15 @@ from tkinter import *
 def visualizarJanela():
 
     # Função Qunado o Botão for Clicado
-    def bt_visualizar():
+    def bt_visualizar(janela):
         item = nomeProduto.get()
-        print(item)
         cont = 0
         itemsCon = open('produtos.txt', 'r')
         itemsConteudo = itemsCon.read()
         itemsList = itemsConteudo.split('\n')
         itemsCon.close()
+
+        janela.destroy()
 
         janela3 = Tk()
 
@@ -25,7 +26,7 @@ def visualizarJanela():
             if findItem != None:
                 cont += 1
                 # texto1 = Label(janela3, text=str(i), foreground='#000', height=2)
-                tx = text=str(cont).ljust(50, '.') + str(i)
+                tx = text=str(cont).ljust(40, '.') + str(i)
                 texto1.insert(cont, tx)
                 texto1.configure(font=('Arial', 22))
                 texto1['bg'] = '#fff'
@@ -53,7 +54,7 @@ def visualizarJanela():
     nomeProduto.pack(pady=10)
 
     # Botão Pesquisar
-    bt = Button(janela2, width=30, height=2, text='Pesquisar', borderwidth=0, foreground='#fff', bg='#4AB5FB', font=('Verdana', 20), command=bt_visualizar)
+    bt = Button(janela2, width=30, height=2, text='Pesquisar', borderwidth=0, foreground='#fff', bg='#4AB5FB', font=('Verdana', 20), command= lambda: bt_visualizar(janela2))
     bt.pack(pady=60)
 
     # Rodapé
@@ -62,5 +63,5 @@ def visualizarJanela():
 
     # Configurações da Janela
     janela2.title('Visualizar')
-    janela2.geometry('650x650+200+200')
+    janela2.geometry('630x650+200+200')
     janela2.mainloop()

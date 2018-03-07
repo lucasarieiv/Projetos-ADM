@@ -1,4 +1,3 @@
-from functools import partial
 from tkinter import *
 from backup import *
 from cadastro import *

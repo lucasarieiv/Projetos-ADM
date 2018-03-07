@@ -92,7 +92,6 @@ while True:
                 lista2.append(i)
             elif i == '':
                 continue
-        # TODO: DIGITAR O NOME DO PRODUTO PRA EXCLUIR
 
         #LOOP PARA VIZUALIZAR OS PRODUTOS
         for li in lista2:
@@ -108,6 +107,7 @@ while True:
             continue
         cont = 0
         salvo = []
+
         #LOOP PARA PEGAR O NÚMERO DO PRODUTO ESCOLHIDO E JOGAR EM UMA LISTA DE EXCLUSÃO
         for li in lista2:
             cont += 1
