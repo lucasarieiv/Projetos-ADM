@@ -81,7 +81,7 @@ def janelaDelete():
 
         # Configurações da Janela
         deleteJanela.title('Deletar Produto')
-        deleteJanela.geometry('1900x1000+0+0')
+        deleteJanela.state('zoomed') # Janela Full Screen
         deleteJanela.mainloop()
 
     # Cria Janela

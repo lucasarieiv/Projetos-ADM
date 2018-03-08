@@ -3,24 +3,21 @@ from tkinter import *
 def cadastroJanela():
 
     # Função Quando o Botão For Clicado
-    def bt_click():
+    def bt_click(janela):
         nome = nomeProduto.get()
         while nome == '':
-            msg = Label(janela1, text='Erro: Digite o Nome do Produto', foreground='red', width=30, bg='#fff', font=('Verdana', 12))
-            msg.pack(pady=5)
-            cadastroJanela.destroy()
-            cadastroJanela()
+            janela.destroy()
         prodCode = codigoProduto.get()
         items = open('produtos.txt', 'a')
         items.write(nome.upper() + ' - ' + prodCode + '\n')
         items.close()
-        janela1.destroy()
+        janela.destroy()
 
     # Cria Janela
     janela1 = Tk()
 
     # Topo do Programa
-    top = Label(janela1, text='Cadastro Produtos', foreground='#fff', height=2, bg='#ED9C0F', font=('Arial', 30))
+    top = Label(janela1, text='Cadastro Produtos', foreground='#fff', height=2, bg='#22C234', font=('Arial', 30))
     top.pack(side=TOP, fill=X)
 
     # Texto: Nome Ex: Lâmpada
@@ -40,11 +37,11 @@ def cadastroJanela():
     codigoProduto.pack(pady=30)
 
     # Botão Cadastrar
-    bt = Button(janela1, width=30, height=2, text='Cadastrar', borderwidth=0, foreground='#fff', bg='#ED9C0F', font=('Verdana', 20), command=bt_click)
+    bt = Button(janela1, width=30, height=2, text='Cadastrar', borderwidth=0, foreground='#fff', bg='#22C234', font=('Verdana', 20), command= lambda: bt_click(janela1))
     bt.pack(pady=15)
 
     # Rodapé
-    rodape = Label(janela1, text='Por Lucas Vieira Copyright \xa9 2018 - Todos os Direitos Reservados', bg='#ED9C0F', foreground='#fff', height=3, font=('Verdana', 13))
+    rodape = Label(janela1, text='Por Lucas Vieira Copyright \xa9 2018 - Todos os Direitos Reservados', bg='#22C234', foreground='#fff', height=3, font=('Verdana', 13))
     rodape.pack(side=BOTTOM, fill=X)
 
 

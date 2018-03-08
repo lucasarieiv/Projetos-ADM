@@ -34,7 +34,7 @@ def visualizarJanela():
 
         # Configurações da Janela
         janela3.title('Visualizar Produtos')
-        janela3.geometry('1900x1000+0+0')
+        janela3.state('zoomed') # Janela Full Screen
         janela3.mainloop()
         itemsList.sort()
 
