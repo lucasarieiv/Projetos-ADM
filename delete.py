@@ -67,7 +67,7 @@ def janelaDelete():
             if findItem1 != None:
                 txt = text=str('[' + str(cont) + ']').ljust(30, '.') + str(li)
                 texto1.insert(cont, txt)
-                texto1.configure(font=('Verdana', 22))
+                texto1.configure(font=('Verdana', 15))
                 texto1['bg'] = '#ccc'
                 texto1.pack(side=TOP, fill=X, pady=0)
 
@@ -107,6 +107,6 @@ def janelaDelete():
     rodape = Label(janelaDel, text='Por Lucas Vieira Copyright \xa9 2018 - Todos os Direitos Reservados', bg='#EF3C28', foreground='#fff', height=3, font=('Verdana', 13))
     rodape.pack(side=BOTTOM, fill=X)
 
-    janelaDel.geometry('630x650+200+200')
+    janelaDel.geometry('630x650+200+20')
     janelaDel.title('Delete')
     janelaDel.mainloop()

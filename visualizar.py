@@ -28,7 +28,7 @@ def visualizarJanela():
                 # texto1 = Label(janela3, text=str(i), foreground='#000', height=2)
                 tx = text=str(cont).ljust(40, '.') + str(i)
                 texto1.insert(cont, tx)
-                texto1.configure(font=('Arial', 22))
+                texto1.configure(font=('Verdana', 15))
                 texto1['bg'] = '#fff'
                 texto1.pack(side=TOP, fill=X, pady=10)
 
@@ -63,5 +63,5 @@ def visualizarJanela():
 
     # Configurações da Janela
     janela2.title('Visualizar')
-    janela2.geometry('630x650+200+200')
+    janela2.geometry('630x650+200+20')
     janela2.mainloop()

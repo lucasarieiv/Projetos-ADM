@@ -25,7 +25,7 @@ class janela(object):
         janela = Tk()
 
         # Topo do Programa
-        top = Label(janela, text='DL - CAMARAGIBE V 2.1', foreground="#fff", height=2, bg='#787878')
+        top = Label(janela, text='CCB - CAMARAGIBE V 2.1', foreground="#fff", height=2, bg='#787878')
         top.configure(font=('Arial', 30, 'bold')) # 'bold'
         top.pack(side=TOP, fill=X)
 
@@ -57,7 +57,7 @@ class janela(object):
 
         # Configurações da Janela
         janela.title('CCB - CODIGOS V 2.1')
-        janela.geometry('630x650+200+200')
+        janela.geometry('630x650+200+20')
         janela.mainloop()
 
 
