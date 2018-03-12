@@ -47,6 +47,6 @@ def cadastroJanela():
 
     # Configurações da Janela
     janela1.title('Cadastro')
-    janela1.geometry('630x650+200+200')
+    janela1.geometry('630x650+200+20')
     janela1['bg'] = '#fff'
     janela1.mainloop()
