@@ -9,6 +9,7 @@ def visualizarJanela():
         itemsCon = open('produtos.txt', 'r')
         itemsConteudo = itemsCon.read()
         itemsList = itemsConteudo.split('\n')
+        itemsList.sort()
         itemsCon.close()
 
         janela.destroy()
